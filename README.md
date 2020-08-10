@@ -29,7 +29,6 @@ Some important properties are still missing from the `package.json`-file of your
 added:
 * A `description`
 * Link to the repository through `repository`
-* A `homepage`
 * An `author`
 
 These are all included in the `template.json` file found in this repository but cra-templates for React is not quite
