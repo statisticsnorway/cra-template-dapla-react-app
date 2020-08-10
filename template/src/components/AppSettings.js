@@ -27,7 +27,7 @@ function AppSettings ({ open, setSettingsOpen }) {
   }
 
   const setDefaults = () => {
-    setSettingsEdited(false)
+    setSettingsEdited(true)
     setApi(process.env.REACT_APP_API)
     setApiUrl(process.env.REACT_APP_API)
   }
