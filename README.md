@@ -22,7 +22,7 @@ coverage reporting after tests in a CI environment, so until that is resolved, w
 _Coming soon!_
 
 #### Things to remember
-Even though this type of setup for a new project skips alot of configuration and setup there are still some small things
+Even though this type of setup for a new project skips a lot of configuration and setup there are still some small things
 you have to change or add in your new project. 
 
 Some important properties are still missing from the `package.json`-file of your newly created project and should be 
