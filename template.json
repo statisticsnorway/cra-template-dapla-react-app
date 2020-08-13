@@ -1,5 +1,9 @@
 {
   "package": {
+    "repository": {
+      "type": "git",
+      "url": ""
+    },
     "description": "",
     "author": "Statistics Norway",
     "license": "Apache-2.0",
