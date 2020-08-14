@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import useAxios from 'axios-hooks'
 import { Button, Container, Divider, Form, Grid, Header, Icon, List, Modal, Segment } from 'semantic-ui-react'
 import { ErrorMessage, InfoPopup, InfoText, SSB_COLORS, SSB_STYLE } from '@statisticsnorway/dapla-js-utilities'
@@ -14,7 +14,7 @@ function AppSettings ({ open, setSettingsOpen }) {
   const [apiUrl, setApiUrl] = useState(api)
   const [settingsEdited, setSettingsEdited] = useState(false)
 
-  const [{ error, loading }] = useAxios(`${api}${API.GET_HEALTH}`, { useCache: false })
+  const [{ error, loading }, execute] = useAxios(`${api}${API.GET_HEALTH}`, { manual: true, useCache: false })
 
   const applySettings = () => {
     setApi(apiUrl)
@@ -27,13 +27,17 @@ function AppSettings ({ open, setSettingsOpen }) {
   }
 
   const setDefaults = () => {
-    setSettingsEdited(true)
-    setApi(process.env.REACT_APP_API)
     setApiUrl(process.env.REACT_APP_API)
+    setApi(process.env.REACT_APP_API)
+    setSettingsEdited(false)
   }
 
+  useEffect(() => {
+    execute()
+  }, [api, execute])
+
   return (
-    <Modal open={open} onClose={() => setSettingsOpen(false)} style={SSB_STYLE}>
+    <Modal open={open} onClose={() => setSettingsOpen(false)} onMount={() => execute()} style={SSB_STYLE}>
       <Header size='large' style={SSB_STYLE}>
         <Icon name='cog' style={{ color: SSB_COLORS.GREEN }} />
         {SETTINGS.HEADER[language]}

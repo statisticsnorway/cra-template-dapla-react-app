@@ -10,6 +10,7 @@ import { SETTINGS, TEST_IDS } from '../enums'
 
 const { alternativeApi, errorString, language } = TEST_CONFIGURATIONS
 const apiContext = TEST_CONFIGURATIONS.apiContext(jest.fn())
+const execute = jest.fn()
 
 const setup = () => {
   const { getByPlaceholderText, getByTestId, getByText } = render(
@@ -24,7 +25,7 @@ const setup = () => {
 }
 
 describe('Common mock', () => {
-  useAxios.mockReturnValue([{ error: undefined, loading: false }])
+  useAxios.mockReturnValue([{ error: undefined, loading: false }, execute])
 
   test('Renders correctly', () => {
     const { getByPlaceholderText } = setup()
@@ -56,7 +57,7 @@ describe('Common mock', () => {
 })
 
 test('Shows error when there is a problem with the API', () => {
-  useAxios.mockReturnValue([{ error: errorString, loading: false }])
+  useAxios.mockReturnValue([{ error: errorString, loading: false }, execute])
 
   const { getByText } = setup()
 
