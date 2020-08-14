@@ -4,7 +4,7 @@ import { LANGUAGE, SSB_COLORS } from '@statisticsnorway/dapla-js-utilities'
 
 import SSBLogo from '../ssb-logo-rgb.svg'
 import { LanguageContext } from '../context/AppContext'
-import { TEST_IDS, UI } from '../enums'
+import { UI } from '../enums'
 
 function AppMenu ({ setSettingsOpen }) {
   const { language, setLanguage } = useContext(LanguageContext)
@@ -26,7 +26,7 @@ function AppMenu ({ setSettingsOpen }) {
         <Menu.Item
           style={{ color: SSB_COLORS.GREEN }}
           onClick={() => setSettingsOpen(true)}
-          icon={{ name: 'setting', size: 'big', 'data-testid': TEST_IDS.ACCESS_SETTINGS_BUTTON }}
+          icon={{ name: 'setting', size: 'big' }}
         />
         <Dropdown item text={`${LANGUAGE.LANGUAGE[language]} (${LANGUAGE.LANGUAGE_CHOICE[language]})`}>
           <Dropdown.Menu>{dropdownItems}</Dropdown.Menu>

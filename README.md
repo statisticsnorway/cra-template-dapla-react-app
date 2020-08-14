@@ -15,8 +15,9 @@ For example, if you want to start a new project called `new-dapla-app`, and you 
 `C:/code/react-templates/cra-template-dapla-react-app`, the command would be
 `yarn create react-app new-dapla-app --scripts-version react-scripts@3.4.0 --template file:C:/code/react-templates/cra-template-dapla-react-app`.
 
-**Note** on why specifying `react-scripts@3.4.0`. At the moment `3.4.1` is the current version and it does not support
-coverage reporting after tests in a CI environment, so until that is resolved, we use version `3.4.0`.
+**Note** on why specifying `react-scripts@3.4.0`. At the moment `3.4.1` introduced a bug that causes coverage reporting 
+after tests in a CI environment to not work, so until that is resolved, we use version `3.4.0`. Issue #8689 and #9322
+on the GitHub page of create-react-app explains the problem.
 
 ### From npm
 _Coming soon!_

@@ -14,9 +14,10 @@ function AppSettings ({ open, setSettingsOpen }) {
   const [apiUrl, setApiUrl] = useState(api)
   const [settingsEdited, setSettingsEdited] = useState(false)
 
-  const [{ error, loading }] = useAxios(`${api}${API.GET_HEALTH}`, { useCache: false })
+  const [{ error, loading }, execute] = useAxios(`${api}${API.GET_HEALTH}`, { manual: true, useCache: false })
 
   const applySettings = () => {
+    execute()
     setApi(apiUrl)
     setSettingsEdited(false)
   }
@@ -33,7 +34,7 @@ function AppSettings ({ open, setSettingsOpen }) {
   }
 
   return (
-    <Modal open={open} onClose={() => setSettingsOpen(false)} style={SSB_STYLE}>
+    <Modal open={open} onClose={() => setSettingsOpen(false)} onMount={() => execute()} style={SSB_STYLE}>
       <Header size='large' style={SSB_STYLE}>
         <Icon name='cog' style={{ color: SSB_COLORS.GREEN }} />
         {SETTINGS.HEADER[language]}
