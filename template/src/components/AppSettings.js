@@ -7,7 +7,7 @@ import { ApiContext, LanguageContext } from '../context/AppContext'
 import { API } from '../configurations'
 import { SETTINGS, TEST_IDS } from '../enums'
 
-function AppSettings ({ open, setSettingsOpen }) {
+function AppSettings ({ open, setOpen }) {
   const { api, setApi } = useContext(ApiContext)
   const { language } = useContext(LanguageContext)
 
@@ -37,7 +37,7 @@ function AppSettings ({ open, setSettingsOpen }) {
   }, [api, execute])
 
   return (
-    <Modal open={open} onClose={() => setSettingsOpen(false)} onMount={() => execute()} style={SSB_STYLE}>
+    <Modal open={open} onClose={() => setOpen(false)} onMount={() => execute()} style={SSB_STYLE}>
       <Header size='large' style={SSB_STYLE}>
         <Icon name='cog' style={{ color: SSB_COLORS.GREEN }} />
         {SETTINGS.HEADER[language]}
@@ -74,7 +74,7 @@ function AppSettings ({ open, setSettingsOpen }) {
             <Grid.Column textAlign='right'>
               <InfoPopup
                 position='left center'
-                text={SETTINGS.RESET_SETTINGS[language]}
+                text={SETTINGS.RESET_VALUES[language]}
                 trigger={
                   <Icon
                     link
@@ -83,7 +83,7 @@ function AppSettings ({ open, setSettingsOpen }) {
                     size='large'
                     onClick={() => setDefaults()}
                     style={{ color: SSB_COLORS.BLUE }}
-                    data-testid={TEST_IDS.DEFAULT_SETTINGS_BUTTON}
+                    data-testid={TEST_IDS.DEFAULT_SETTINGS_VALUES_BUTTON}
                   />
                 }
               />

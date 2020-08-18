@@ -33,7 +33,7 @@ describe('Common mock', () => {
     expect(getByPlaceholderText(SETTINGS.API[language])).toHaveValue(apiContext.api)
   })
 
-  test('Editing works correctly', async () => {
+  test('Editing values works correctly', async () => {
     const { getByPlaceholderText, getByText } = setup()
 
     await userEvent.type(getByPlaceholderText(SETTINGS.API[language]), alternativeApi)
@@ -50,7 +50,7 @@ describe('Common mock', () => {
 
     await userEvent.type(getByPlaceholderText(SETTINGS.API[language]), alternativeApi)
 
-    userEvent.click(getByTestId(TEST_IDS.DEFAULT_SETTINGS_BUTTON))
+    userEvent.click(getByTestId(TEST_IDS.DEFAULT_SETTINGS_VALUES_BUTTON))
 
     expect(getByPlaceholderText(SETTINGS.API[language])).toHaveValue(apiContext.api)
   })

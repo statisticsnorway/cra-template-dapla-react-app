@@ -13,7 +13,7 @@ function App () {
       <Segment basic>
         <AppHome />
       </Segment>
-      <AppSettings setSettingsOpen={setSettingsOpen} open={settingsOpen} />
+      <AppSettings open={settingsOpen} setOpen={setSettingsOpen} />
     </>
   )
 }
