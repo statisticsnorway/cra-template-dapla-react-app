@@ -14,16 +14,16 @@ jest.mock('../components/AppSettings', () => () => null)
 const { language, otherLanguage } = TEST_CONFIGURATIONS
 
 const setup = () => {
-  const { getByTestId, getByText } = render(
+  const { getByText } = render(
     <AppContextProvider>
       <App />
     </AppContextProvider>
   )
 
-  return { getByTestId, getByText }
+  return { getByText }
 }
 
-test('Renders basics', () => {
+test('Does not crash', () => {
   const { getByText } = setup()
 
   expect(getByText(UI.HEADER[language])).toBeInTheDocument()

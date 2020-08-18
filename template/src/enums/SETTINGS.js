@@ -23,7 +23,7 @@ export const SETTINGS = {
     en: 'Everything looks good!',
     nb: 'Alt ser bra ut!'
   },
-  RESET_SETTINGS: {
+  RESET_VALUES: {
     en: 'Reset to default values',
     nb: 'Tilbakestill til standardverdier'
   }
