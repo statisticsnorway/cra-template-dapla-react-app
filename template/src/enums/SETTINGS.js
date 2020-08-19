@@ -19,10 +19,6 @@ export const SETTINGS = {
     en: 'Settings',
     nb: 'Innstillinger'
   },
-  LOOKS_GOOD: {
-    en: 'Everything looks good!',
-    nb: 'Alt ser bra ut!'
-  },
   RESET_VALUES: {
     en: 'Reset to default values',
     nb: 'Tilbakestill til standardverdier'
