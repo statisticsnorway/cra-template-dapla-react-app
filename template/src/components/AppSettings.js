@@ -14,9 +14,10 @@ function AppSettings ({ open, setOpen }) {
   const [apiUrl, setApiUrl] = useState(api)
   const [settingsEdited, setSettingsEdited] = useState(false)
 
-  const [{ error, loading }, execute] = useAxios(`${api}${API.GET_HEALTH}`, { manual: true, useCache: false })
+  const [{ error, loading }, execute] = useAxios(`${apiUrl}${API.GET_HEALTH}`, { manual: true, useCache: false })
 
   const applySettings = () => {
+    execute()
     setApi(apiUrl)
     setSettingsEdited(false)
   }
@@ -27,42 +28,44 @@ function AppSettings ({ open, setOpen }) {
   }
 
   const setDefaults = () => {
-    setApiUrl(process.env.REACT_APP_API)
+    setSettingsEdited(true)
     setApi(process.env.REACT_APP_API)
-    setSettingsEdited(false)
+    setApiUrl(process.env.REACT_APP_API)
   }
 
   useEffect(() => {
     execute()
-  }, [api, execute])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   return (
-    <Modal open={open} onClose={() => setOpen(false)} onMount={() => execute()} style={SSB_STYLE}>
+    <Modal open={open} onClose={() => setOpen(false)} style={SSB_STYLE}>
       <Header size='large' style={SSB_STYLE}>
         <Icon name='cog' style={{ color: SSB_COLORS.GREEN }} />
         {SETTINGS.HEADER[language]}
       </Header>
-      <Modal.Content as={Segment} basic loading={loading} style={SSB_STYLE}>
+      <Modal.Content as={Segment} basic style={SSB_STYLE}>
         <Form size='large'>
           <Form.Input
             value={apiUrl}
-            disabled={loading}
+            loading={loading}
             label={SETTINGS.API[language]}
             error={!!error && !settingsEdited}
             placeholder={SETTINGS.API[language]}
             onChange={(event, { value }) => changeSettings(value)}
             onKeyPress={({ key }) => key === 'Enter' && applySettings()}
+            icon={!loading && !settingsEdited && !error ?
+              <Icon name='check' style={{ color: SSB_COLORS.GREEN }} /> : null
+            }
           />
         </Form>
         {!loading && !settingsEdited && error && <ErrorMessage error={error} language={language} />}
+        {!loading && settingsEdited &&
+        <Container style={{ marginTop: '0.5rem' }}>
+          <InfoText text={SETTINGS.EDITED_VALUES[language]} />
+        </Container>
+        }
         <Container style={{ marginTop: '1rem' }}>
-          {!loading && settingsEdited && <InfoText text={SETTINGS.EDITED_VALUES[language]} />}
-          {!loading && !settingsEdited && !error &&
-          <>
-            <Icon name='check' style={{ color: SSB_COLORS.GREEN }} />
-            {SETTINGS.LOOKS_GOOD[language]}
-          </>
-          }
           <Divider hidden />
           <Grid columns='equal'>
             <Grid.Column>
