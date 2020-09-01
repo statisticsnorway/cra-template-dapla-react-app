@@ -1,6 +1,6 @@
 # cra-template-dapla-react-app
 
-This little template repository works as a cra-template when creating new React Applications. Basing a new project on a 
+This little template can be used as a cra-template when creating new React Applications. Basing a new project on a 
 cra-template can be quite powerful and lets you skip the boring part of first time setup. Following the official 
 documentation on [templates for React](https://create-react-app.dev/docs/custom-templates/), this template offers a 
 good start for any React application built for Statistics Norway Dataplatform (Dapla).
@@ -37,9 +37,7 @@ These are all included in the `template.json` file found in this repository but 
 at the level of copying every property from the template yet.
 
 Secondly, some things needs to be changed:
-* In `azure-pipelines.yml`:
-    * Change `[app-name]` in `repository` under `jobs -> job: MergeToMaster -> steps -> task: Docker@2 -> inputs` to
-    your applications name
+* In `azure-pipelines.yml` change the variable value for `appName` to your applications name
 * In `public/index.html` change:
     * `content` in `<meta name="description" />`
     * `<title>`
@@ -70,4 +68,4 @@ So, what does this template actually give you?
     * Configures SonarQube test coverage reporting
 * Sets up a skeleton application with:
     * Context capabilities for language choice across the application and a backend api to talk to
-    * A top menu with the Statistics Norway logo, language choice and settings menu (for changing backend url on the fly)
+    * A top menu with the Statistics Norway logo, language choice and settings menu (for changing backend url runtime)
