@@ -30,7 +30,6 @@
       "collectCoverageFrom": [
         "src/**",
         "!src/index.js",
-        "!src/ssb-logo-rgb.svg",
         "!src/**/index.js",
         "!src/configurations/**",
         "!src/enums/**",
