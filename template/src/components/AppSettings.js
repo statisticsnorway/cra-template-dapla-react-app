@@ -34,7 +34,7 @@ function AppSettings ({ open, setOpen }) {
   }
 
   useEffect(() => {
-    if (open) {
+    if (open && !settingsEdited) {
       execute()
     }
   }, [execute, open])
