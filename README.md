@@ -9,11 +9,13 @@ good start for any React application built for Statistics Norway Dataplatform (D
 ### Locally
 1. Clone this repository
 2. Create your new React application by running 
-`yarn create react-app [app-name] --scripts-version react-scripts@3.4.0 --template file:[path-to-this-repository]`
+`yarn create react-app [app-name] --template file:[path-to-this-repository]`
 
 For example, if you want to start a new project called `new-dapla-app`, and you cloned this repository to 
 `C:/code/react-templates/cra-template-dapla-react-app`, the command would be
-`yarn create react-app new-dapla-app --scripts-version react-scripts@3.4.0 --template file:C:/code/react-templates/cra-template-dapla-react-app`.
+`yarn create react-app new-dapla-app --template file:C:/code/react-templates/cra-template-dapla-react-app`.
+
+After this, run `yarn add --exact react-scripts@3.4.0` in your project.
 
 **Note** on why specifying `react-scripts@3.4.0`. At the moment `3.4.1` introduced a bug that causes coverage reporting 
 after tests in a CI environment to not work, so until that is resolved, we use version `3.4.0`. Issue #8689 and #9322
@@ -44,20 +46,19 @@ Secondly, some things needs to be changed:
 * In `public/manifest.json` change `short_name` and `name`
 
 Lastly:
-* Change `REACT_APP_API` in both `.env`-files
+* Change `REACT_APP_API` in the `.env`-file
 * Change `UI.HEADER` in `src/enums/UI.js`
 
 Phew! Now you should be good to go!
 
-Another thing you might want to consider is moving the `@testing-library` libraries from `dependencies` to
-`devDependencies` in your new project (in the `package.json` file). The template should have done this for you but at 
-the moment cra-templates does not support declaring `devDependencies` in a template. This is a matter of subjective
-choice though, because when you build your application for production React will not include these libraries anyways,
-even though they are listed as `dependencies`, not `devDependencies`.
+Another thing you might want to consider is moving the `@testing-library` libraries and the `@beam-australia/react-env` 
+library from `dependencies` to `devDependencies` in your new project (in the `package.json` file). The template should 
+have done this for you but at the moment cra-templates does not support declaring `devDependencies` in a template.
 
 ## Under the hood
 So, what does this template actually give you? 
 * It pre-installs some dependencies, mainly:
+    * [react-env](https://github.com/andrewmclagan/react-env), enabling setting environment variables with `docker run`
     * axios through [axios-hooks](https://github.com/simoneb/axios-hooks)
     * SemanticUI and its [React integration](https://react.semantic-ui.com/)
     * [dapla-js-utilities](https://github.com/statisticsnorway/dapla-js-utilities)
@@ -68,4 +69,4 @@ So, what does this template actually give you?
     * Configures SonarQube test coverage reporting
 * Sets up a skeleton application with:
     * Context capabilities for language choice across the application and a backend api to talk to
-    * A top menu with the Statistics Norway logo, language choice and settings menu (for changing backend url runtime)
+    * A top menu with the Statistics Norway logo, language choice and settings menu (for changing backend url in-app)
