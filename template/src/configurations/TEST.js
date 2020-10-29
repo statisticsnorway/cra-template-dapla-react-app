@@ -2,7 +2,7 @@ import { LANGUAGE } from '@statisticsnorway/dapla-js-utilities'
 
 export const TEST_CONFIGURATIONS = {
   alternativeApi: 'http://localhost:9999',
-  apiContext: (fn) => ({
+  apiContext: fn => ({
     api: window._env.REACT_APP_API,
     setApi: fn
   }),

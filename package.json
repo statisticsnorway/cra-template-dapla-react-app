@@ -1,7 +1,7 @@
 {
   "name": "@statisticsnorway/cra-template-dapla-react-app",
   "version": "0.1.0",
-  "description": "A base template for Create React App for Statistics Norway Dataplatform",
+  "description": "A CRA template for Create React App for Statistics Norway Dataplatform",
   "main": "template.json",
   "repository": {
     "type": "git",
