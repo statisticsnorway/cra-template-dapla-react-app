@@ -54,10 +54,10 @@ So, what does this template actually give you?
 * It pre-installs some dependencies, mainly:
     * [react-env](https://github.com/andrewmclagan/react-env), enabling setting environment variables with `docker run`
     * axios through [axios-hooks](https://github.com/simoneb/axios-hooks)
-    * SemanticUI and its [React integration](https://react.semantic-ui.com/)
+    * SemanticUI with its [React integration](https://react.semantic-ui.com/)
     * [dapla-js-utilities](https://github.com/statisticsnorway/dapla-js-utilities)
     * [React](https://create-react-app.dev/docs/getting-started)
-* Sets up CI for React applications with Azure Piplines
+* Sets up CI for React applications with Azure Piplines on BIP
     * Configures a Dockerfile
     * Configures serving the application with NGINX
     * Configures SonarQube test coverage reporting
