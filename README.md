@@ -1,8 +1,8 @@
 # cra-template-dapla-react-app
 
 This little template can be used as a cra-template when creating new React Applications. Basing a new project on a 
-cra-template can be quite powerful and lets you skip the boring part of first time setup. Following the official 
-documentation on [templates for React](https://create-react-app.dev/docs/custom-templates/), this template offers a 
+cra-template can be quite powerful and lets you skip the boring part of a new project setup. Following the official 
+documentation on [templates for React](https://create-react-app.dev/docs/custom-templates), this template offers a 
 good start for any React application built for Statistics Norway Dataplatform (Dapla).
 
 ## How to set it up
@@ -54,7 +54,7 @@ So, what does this template actually give you?
 * It pre-installs some dependencies, mainly:
     * [react-env](https://github.com/andrewmclagan/react-env), enabling setting environment variables with `docker run`
     * axios through [axios-hooks](https://github.com/simoneb/axios-hooks)
-    * SemanticUI with its [React integration](https://react.semantic-ui.com/)
+    * SemanticUI with its [React integration](https://react.semantic-ui.com)
     * [dapla-js-utilities](https://github.com/statisticsnorway/dapla-js-utilities)
     * [React](https://create-react-app.dev/docs/getting-started)
 * Sets up CI for React applications with Azure Piplines on BIP

@@ -15,7 +15,7 @@
     ],
     "dependencies": {
       "@beam-australia/react-env": "^2.1.0",
-      "@statisticsnorway/dapla-js-utilities": "^0.2.0",
+      "@statisticsnorway/dapla-js-utilities": "^0.2.1",
       "@testing-library/jest-dom": "^5.7.0",
       "@testing-library/react": "^11.0.0",
       "@testing-library/user-event": "^12.0.0",
