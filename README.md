@@ -13,7 +13,7 @@ good start for any React application built for Statistics Norway Dataplatform (D
 
 For example, if you want to start a new project called `new-dapla-app`, and you cloned this repository to 
 `/Users/me/Projects/react-templates/cra-template-dapla-react-app`, the command would be
-`yarn create react-app new-dapla-app --template file:Users/me/Projects/react-templates/cra-template-dapla-react-app`.
+`yarn create react-app new-dapla-app --template file:/Users/me/Projects/react-templates/cra-template-dapla-react-app`.
 
 ### From npm
 _Coming soon!_
