@@ -52,7 +52,8 @@ have done this for you but at the moment cra-templates does not support declarin
 ## Under the hood
 So, what does this template actually give you? 
 * It pre-installs some dependencies, mainly:
-    * [react-env](https://github.com/andrewmclagan/react-env), enabling setting environment variables with `docker run`
+    * [@beam-australia/react-env](https://github.com/andrewmclagan/react-env) enabling setting environment variables 
+      with `docker run`
     * axios through [axios-hooks](https://github.com/simoneb/axios-hooks)
     * SemanticUI with its [React integration](https://react.semantic-ui.com)
     * [dapla-js-utilities](https://github.com/statisticsnorway/dapla-js-utilities)
