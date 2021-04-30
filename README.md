@@ -3,7 +3,7 @@
 This little template can be used as a cra-template when creating new React Applications. Basing a new project on a 
 cra-template can be quite powerful and lets you skip the boring part of a new project setup. Following the official 
 documentation on [templates for React](https://create-react-app.dev/docs/custom-templates), this template offers a 
-good start for any React application built for Statistics Norway Dataplatform (Dapla).
+good start for any React application built for Statistics Norway Data Platform (Dapla).
 
 ## How to set it up
 ### Locally
